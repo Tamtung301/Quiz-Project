@@ -191,7 +191,7 @@ const questions = [
       }
 
       if (currentQuestionIndex >= questions.length) {
-        alert(`End of quiz! Good job! \n\nYou scored ${(correctCount/10) * 100}%\n\nClick "Ok" to restart the quiz.`);
+        alert(`End of quiz! Good job, ${usernames[0]}! \n\nYou scored ${(correctCount/10) * 100}%\n\nClick "OK" to restart the quiz.`);
         currentQuestionIndex = 0;
         correctCount = 0;
         incorrectCount = 0;

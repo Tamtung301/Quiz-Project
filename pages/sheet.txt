@@ -1,0 +1,119 @@
+     <script>
+      const questions = [
+        {
+            question: "Which is the best Anime?",
+            answers: {
+            a : "Dragon Ball Z",
+            b : "Naruto/Naruto Shipudden",
+            c : "One Piece",
+            d : "My Hero Academia"
+            },
+        correctAnswer: "a"
+        },
+        {
+            question: "When was the first iPhone released?",
+            answers: {
+            a : "2005",
+            b : "2010",
+            c : "2001",
+            d : "2007"
+            },
+            correctAnswer: "d"
+        },
+        {
+            question: "Which is NOT a Windows OS?",
+            answers: {
+            a : "XP",
+            b : "7",
+            c : "9",
+            d : "8.1"
+            },
+            correctAnswer: "c"
+        },
+        {
+            question: "What is Spider-Man's real name?",
+            answers: {
+            a : "Tony Stark",
+            b : "Peter Parker",
+            c : "Stan Lee",
+            d : "Reed Richards"
+            },
+            correctAnswer: "b"
+        },
+        {
+            question: "What mainly constitutes a leap year?",
+            answers: {
+            a : "Every 4 years",
+            b : "Even years",
+            c : "Divisible by 4",
+            d : "Coin toss"
+            },
+            correctAnswer: "c"
+        },
+        {
+            question: "What is the mascot of Cal State Fullerton?",
+            answers: {
+            a : "Titan",
+            b : "Elephant",
+            c : "Coyote",
+            d : "Shark"
+            },
+            correctAnswer: "b"
+        },
+        {
+            question: "When did World War II begin?",
+            answers: {
+            a : "1939",
+            b : "1942",
+            c : "1918",
+            d : "2024"
+        },
+        correctAnswer: "a"
+        },
+        {
+            question: "What is the largest organ of the body?",
+            answers: {
+            a : "The skin",
+            b : "The heart",
+            c : "The Stomach",
+            d : "The brain"
+            },
+            correctAnswer: "a"
+        },
+        {
+            question: "What is the name of the largest ocean?",
+            answers: {
+            a : "Atlantic",
+            b : "Pacific",
+            c : "Indian",
+            d : "Arctic"
+            },
+            correctAnswer: "b"
+        },
+        {
+            question: "What was the first soft drink in space?",
+            answers: {
+            a : "Dr. Pepper", 
+            b : "Pepsi",
+            c : "7-Up",
+            d : "Coca Cola"
+            },
+            correctAnswer: "d"
+        },
+        {
+            question: "Which country invented ice cream?",
+            answers: {
+            a : "USA",
+            b : "Japan",
+            c : "China",
+            d : "France"
+            },
+            correctAnswer: "c"
+        }];
+  
+      nextQuestionBtn = document.getElementById('nextQuestionBtn')
+  
+      nextQuestionBtn.addEventListener('click', function(e) {
+        alert(questions);
+      })
+    </script>

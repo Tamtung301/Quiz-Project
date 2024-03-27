@@ -3,9 +3,11 @@
 <head> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles/quiz.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   <title>Quiz Time</title>
 </head>
 <body>
@@ -21,11 +23,72 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/pages/home.html">Home</a></li>
-          <li><a href="/pages/quiz.html">Quiz Time</a></li>
+          <li><a href="/pages/home.html">Home</a></li>
+          <li class="active"><a href="/pages/quiz.html">Quiz Time</a></li>
           <li><a href="/pages/account.html">Account</a></li>
       </div>
     </div>
   </nav>
+
+  <script>
+    $(document).ready(function(){
+        $("#loginModal").modal({ backdrop: 'static', keyboard: false });
+
+        // Prevent modal from closing if form is not valid
+        $(".close").on("click", function() {
+            if ($("#uname").val().trim() === '' || $("#pswrd").val().trim() === '') {
+                alert("Please fill out both username and password.");
+                return false; // Prevent modal from closing
+            }
+        });
+
+        // Handle form submission without page reload
+        $("#userForm").on("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Your form submission logic here (e.g., sending data via AJAX)
+            alert("User registered successfully!"); // Example alert
+
+            // Optionally, close the modal after form submission
+            $("#loginModal").modal('hide');
+        });
+    });
+</script>
+
+<div id="loginModal" class="modal fade">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Please Sign in or Register</h5>
+              <button type="button" class="close"> &times;</button>
+          </div>
+          <div class="modal-body">
+              <form id="userForm">
+                <label for="uname">Username:</label>
+                <input type="text" class="form-control" id="uname" required>
+                <label for="pswrd">Password:</label>
+                <input type="password" class="form-control" id="pswrd" required>
+                <br>
+                <button type="submit" class="btn btn-primary" id="registerBtn">Register</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+  <h2 align="center">Quiz Time!</h2>
+
+<div class="container col-lg" align="center">
+  <form>
+    <div class="container col-lg-6" id="questionContainer"></div>
+    <div class="container col-lg-6" id="trackerContainer">
+      <p>Correct Choices: <span id="correctCount">0</span></p>
+      <p>Incorrect Choices: <span id="incorrectCount">0</span></p>
+  </div>
+  <button type="submit" id="nextBtn" class="btn btn-primary">Next Question</button>
+  </form>
+</div>
+
+<script src="/js/quiz.js"></script>
 </body>
 </html>

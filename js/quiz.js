@@ -105,24 +105,6 @@ const questions = [
     let correctCount = 0;
     let incorrectCount = 0;
 
-
-    let usernames = [];
-    let passwords = [];
-
-    const registerButton = document.getElementById('registerBtn');
-    registerButton.addEventListener('click', function(e) {
-
-    const usernameInput = document.getElementById('uname');
-    const passwordInput = document.getElementById('pswrd');
-
-    const username = usernameInput.value.trim();
-    const password = passwordInput.value.trim();
-
-    usernames.push(username);
-    passwords.push(password);
-
-    });
-
     const nextBtn = document.getElementById('nextBtn')
     nextBtn.addEventListener('click', function() {
       event.preventDefault();

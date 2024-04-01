@@ -1,4 +1,94 @@
-.choices-container, .question {
-    text-align: left;
+/* Body styles */
+body {
+    background-color: #222; /* Dark background color */
+    color: #fff; /* Text color */
 }
 
+/* Navbar styles */
+.navbar {
+    background-color: #333; /* Navbar background color */
+    color: #fff; /* Navbar text color */
+}
+
+/* Modal styles */
+.modal-content {
+    background-color: #222 !important; /* Modal background color */
+    color: #fff; /* Modal text color */
+}
+
+.modal-header {
+    background-color: #333; /* Modal header background color */
+    color: #fff; /* Modal header text color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.close {
+    color: #fff;
+    font-size: 28px;
+    margin-left: auto;
+}
+
+/* Form styles */
+.form-control {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Button styles */
+.btn {
+    background-color: #DA0C81;
+    border-color: #DA0C81;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #E95793;
+    border-color: #E95793;
+}
+
+#questionContainer {
+    text-align: left; /* Align questions to the left */
+}
+
+/* Container styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+
+/* Question container styles */
+#questionContainer {
+    text-align: left; /* Align text to the left */
+    margin-bottom: 20px; /* Add some bottom margin for spacing */
+}
+
+/* Styles for radio buttons */
+input[type="radio"] {
+    appearance: none; /* Remove default appearance */
+    -webkit-appearance: none; /* Remove default appearance for WebKit browsers */
+    width: 20px; /* Adjust width as needed */
+    height: 20px; /* Adjust height as needed */
+    border-radius: 50%; /* Make it circular */
+    margin: 0px;
+    border: 2px solid #E95793; /* Match the color of the Next Question button */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Show pointer cursor */
+    vertical-align: middle; /* Align radio button vertically in the middle */
+}
+
+/* Style when radio button is checked */
+input[type="radio"]:checked {
+    background-color: #E95793; /* Match the color of the Next Question button */
+}
+
+/* Styles for choice text */
+label {
+    padding-top: 5px;
+    display: inline-block;
+    margin-left: 8px; /* Adjust spacing between radio button and text */
+}

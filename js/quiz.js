@@ -104,6 +104,34 @@ const questions = [
     let currentQuestionIndex = 0;
     let correctCount = 0;
     let incorrectCount = 0;
+    let usernames = [];
+    let passwords = [];
+    let firstNames = [];
+    let lastNames = [];
+    let emails = [];
+
+    const registerButton = document.getElementById('registerBtn');
+registerButton.addEventListener('click', function(e) {
+
+const usernameInput = document.getElementById('uname');
+const passwordInput = document.getElementById('pswrd');
+const firstNameInput = document.getElementById('fname');
+const lastNameInput = document.getElementById('lname');
+const emailInput = document.getElementById('email');
+
+const username = usernameInput.value.trim();
+const password = passwordInput.value.trim();
+const firstName = firstNameInput.value.trim();
+const lastName = lastNameInput.value.trim();
+const email = emailInput.value.trim();
+
+usernames.push(username);
+passwords.push(password);
+lastNames.push(lastName);
+firstNames.push(firstName);
+emails.push(email);
+
+});
 
     const nextBtn = document.getElementById('nextBtn')
     nextBtn.addEventListener('click', function() {
@@ -133,6 +161,9 @@ const questions = [
       choicesDiv.className = 'choices-container';
 
       for (const choice in questionObj.answers) {
+        const choiceContainer = document.createElement('div'); // Container for each choice
+        choiceContainer.className = 'choice-container';
+
         const choiceInput = document.createElement('input');
         choiceInput.type = 'radio';
         choiceInput.name = `choice`;
@@ -150,6 +181,15 @@ const questions = [
       updateTracker();
 
 /*       container.appendChild(choicesDiv); */
+function checkAnswer(selectedChoice, questionObj) {
+  if (selectedChoice.value === questionObj.correctAnswer) {
+      correctCount++;
+      alert("Correct answer!");
+  } else {
+      incorrectCount++;
+      alert(`Wrong answer! The correct answer is: ${questionObj.answers[questionObj.correctAnswer]}`);
+  }
+}
 
     function nextQuestion() {
 
@@ -159,24 +199,48 @@ const questions = [
           return; // Exit the function if no choice is selected
       }
 
-      const questionObj = questions[currentQuestionIndex];
-      if (selectedChoice.value === questionObj.correctAnswer) {
-          correctCount++;
-      } else {
-          incorrectCount++;
-      }
-
-      currentQuestionIndex++;
+    const questionObj = questions[currentQuestionIndex];
+    checkAnswer(selectedChoice, questionObj); // Call the checkAnswer function
+    currentQuestionIndex++;
 
       if (currentQuestionIndex == 9) {
         nextBtn.textContent = "Submit Quiz"
       }
 
       if (currentQuestionIndex >= questions.length) {
-        alert(`End of quiz! Good job, ${usernames[0]}! \n\nYou scored ${(correctCount/10) * 100}%\n\nClick "OK" to restart the quiz.`);
-        currentQuestionIndex = 0;
-        correctCount = 0;
-        incorrectCount = 0;
+            // Calculate grade percentage
+    var gradePercentage = (correctCount / 10) * 100;
+
+    // Determine letter grade based on grade percentage
+    var letterGrade;
+    if (gradePercentage >= 90) {
+        letterGrade = 'A';
+    } else if (gradePercentage >= 80) {
+        letterGrade = 'B';
+    } else if (gradePercentage >= 70) {
+        letterGrade = 'C';
+    } else if (gradePercentage >= 60) {
+        letterGrade = 'D';
+    } else {
+        letterGrade = 'F';
+    }
+
+    // Mock report card output
+    var reportCard = `Report Card\n
+Username: ${usernames[0]}
+First Name: ${firstNames[0]}
+Last Name: ${lastNames[0]}
+Email: ${emails[0]}
+Grade Percentage: ${gradePercentage.toFixed(2)}%
+Letter Grade: ${letterGrade}`;
+
+    // Display report card and option to email (nonfunctional)
+    alert(`${reportCard}`);
+
+    // Reset quiz variables
+    currentQuestionIndex = 0;
+    correctCount = 0;
+    incorrectCount = 0;
       }
       displayQuestion();
     }

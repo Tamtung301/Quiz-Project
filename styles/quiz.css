@@ -49,10 +49,6 @@ body {
     border-color: #E95793;
 }
 
-#questionContainer {
-    text-align: left; /* Align questions to the left */
-}
-
 /* Container styles */
 .container {
     display: flex;
@@ -63,7 +59,7 @@ body {
 
 /* Question container styles */
 #questionContainer {
-    text-align: left; /* Align text to the left */
+    text-align: left; /* Align questions to the left */
     margin-bottom: 20px; /* Add some bottom margin for spacing */
 }
 

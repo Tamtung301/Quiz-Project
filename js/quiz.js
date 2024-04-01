@@ -153,12 +153,12 @@ emails.push(email);
     const questionObj = questions[currentQuestionIndex];
     // Used to erase contents of container before reloading next question
     container.innerHTML = '';
-
+      //create div to hold questions
       const qDiv = document.createElement('div');
       qDiv.className = 'question'
-      qDiv.textContent = `Question ${currentQuestionIndex + 1}: ${questionObj.question}`;
+      qDiv.textContent = `Question ${currentQuestionIndex + 1}: ${questionObj.question}`; // uses current index to display relevant question
       container.appendChild(qDiv);
-      qDiv.appendChild(document.createElement('br'))
+      qDiv.appendChild(document.createElement('br')) // line break before displaying choices
 
       // Shows the choices with a radio button for selection
       const choicesDiv = document.createElement('div');
@@ -167,7 +167,7 @@ emails.push(email);
       for (const choice in questionObj.answers) {
         const choiceContainer = document.createElement('div'); // Container for each choice
         choiceContainer.className = 'choice-container';
-
+        // Only one correct choice for each question so radio buttons are used
         const choiceInput = document.createElement('input');
         choiceInput.type = 'radio';
         choiceInput.name = `choice`;
@@ -196,7 +196,7 @@ function checkAnswer(selectedChoice, questionObj) {
       alert(`Wrong answer! The correct answer is: ${questionObj.answers[questionObj.correctAnswer]}`);
   }
 }
-
+    // initialize function to handle displaying next questions
     function nextQuestion() {
 
       const selectedChoice = document.querySelector('input[name="choice"]:checked');
@@ -231,7 +231,7 @@ function checkAnswer(selectedChoice, questionObj) {
         letterGrade = 'F';
     }
 
-    // Mock report card output
+    // report card output
     var reportCard = `Report Card\n
 Username: ${usernames[0]}
 First Name: ${firstNames[0]}

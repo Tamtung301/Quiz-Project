@@ -100,7 +100,7 @@ const questions = [
         },
         correctAnswer: "d"
     }];
-
+    // Initialize variables that will hold user info
     let currentQuestionIndex = 0;
     let correctCount = 0;
     let incorrectCount = 0;
@@ -110,21 +110,25 @@ const questions = [
     let lastNames = [];
     let emails = [];
 
+    // Click event listener that saves information from modal into arrays that hold user info
     const registerButton = document.getElementById('registerBtn');
 registerButton.addEventListener('click', function(e) {
 
+  // Associates html modal input variables with JS variables
 const usernameInput = document.getElementById('uname');
 const passwordInput = document.getElementById('pswrd');
 const firstNameInput = document.getElementById('fname');
 const lastNameInput = document.getElementById('lname');
 const emailInput = document.getElementById('email');
 
+// Trims empty surrounding characters from user inputs
 const username = usernameInput.value.trim();
 const password = passwordInput.value.trim();
 const firstName = firstNameInput.value.trim();
 const lastName = lastNameInput.value.trim();
 const email = emailInput.value.trim();
 
+// Saves user info
 usernames.push(username);
 passwords.push(password);
 lastNames.push(lastName);
@@ -183,9 +187,11 @@ emails.push(email);
 /*       container.appendChild(choicesDiv); */
 function checkAnswer(selectedChoice, questionObj) {
   if (selectedChoice.value === questionObj.correctAnswer) {
+    // Increments correct choice answer
       correctCount++;
       alert("Correct answer!");
   } else {
+    // Increments incorrect choice counter and displays correct answer
       incorrectCount++;
       alert(`Wrong answer! The correct answer is: ${questionObj.answers[questionObj.correctAnswer]}`);
   }
@@ -201,10 +207,10 @@ function checkAnswer(selectedChoice, questionObj) {
 
     const questionObj = questions[currentQuestionIndex];
     checkAnswer(selectedChoice, questionObj); // Call the checkAnswer function
-    currentQuestionIndex++;
+    currentQuestionIndex++; // Increments current question counter
 
       if (currentQuestionIndex == 9) {
-        nextBtn.textContent = "Submit Quiz"
+        nextBtn.textContent = "Submit Quiz" // Changes text on button to Submit Quiz on final question
       }
 
       if (currentQuestionIndex >= questions.length) {
@@ -234,7 +240,7 @@ Email: ${emails[0]}
 Grade Percentage: ${gradePercentage.toFixed(2)}%
 Letter Grade: ${letterGrade}`;
 
-    // Display report card and option to email (nonfunctional)
+    // Display report card
     alert(`${reportCard}`);
 
     // Reset quiz variables
@@ -244,7 +250,8 @@ Letter Grade: ${letterGrade}`;
       }
       displayQuestion();
     }
-    
+
+    // Loads form container and handles changing the questions when nextBtn is clicked
     document.addEventListener('DOMContentLoaded', function() {
       displayQuestion();
 

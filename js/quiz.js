@@ -136,22 +136,22 @@ firstNames.push(firstName);
 emails.push(email);
 
 });
-
+    // Click event listener for next questions
     const nextBtn = document.getElementById('nextBtn')
     nextBtn.addEventListener('click', function() {
       event.preventDefault();
       console.log(questions);
   });
-
+  // function initializer to update the correct/incorrect tracker
   function updateTracker() {
     document.getElementById('correctCount').textContent = correctCount;
     document.getElementById('incorrectCount').textContent = incorrectCount;
   }
-
+  // function handles displaying questions into the questionContainer in HTML
   function displayQuestion() {
     const container = document.getElementById('questionContainer');
     const questionObj = questions[currentQuestionIndex];
-
+    // Used to erase contents of container before reloading next question
     container.innerHTML = '';
 
       const qDiv = document.createElement('div');

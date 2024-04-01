@@ -184,7 +184,6 @@ emails.push(email);
       container.appendChild(choicesDiv);
       updateTracker();
 
-/*       container.appendChild(choicesDiv); */
 function checkAnswer(selectedChoice, questionObj) {
   if (selectedChoice.value === questionObj.correctAnswer) {
     // Increments correct choice answer

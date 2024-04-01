@@ -1,6 +1,6 @@
 # Project Overview
 
-This project is a simple quiz application that allows users to register, answer quiz questions, and view their score at the end. Below are the main concepts of HTML, CSS, and JavaScript used in this project:
+This project is a simple quiz application that allows users to register, answer quiz questions, and view their score at the end. Below are the main concepts of HTML, CSS, and JavaScript I used in this project:
 
 ## HTML Concepts
 - **Forms:** Used to capture user registration details such as username, password, first name, last name, and email.
